@@ -3,22 +3,22 @@ const constants = require('../utils/constants')
 const User = require('../model/user.model')
 
 
-verifyToken = (req,res,next)=>{
-    let token = req.headers['x-access-token']
-    if(!token){
+verifyToken = (req, res, next) => {
+    let token = req.headers['x-access-token'];
+    if (!token) {
         return res.status(403).send({
-            message : 'No Token Provided'
-        })
+            message: 'No Token Provided'
+        });
     }
-    jwt.verifyToken(token, process.env.SECERET, (err,decoded)=>{
-        if(err){
+    jwt.verify(token, process.env.SECERET, (err, decoded) => {
+        if (err) {
             return res.status(401).send({
-                message : "Unauthorized"
-            })
+                message: "Unauthorized"
+            });
         }
         req.userId = decoded.id;
-        next()
-    })
+        next();
+    });
 }
 
 isAdmin = async(req,res,next)=>{

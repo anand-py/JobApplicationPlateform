@@ -36,7 +36,7 @@ validateJobRequestBody = async(req,res)=>{
     })
     if(!recruiter && !constants.userTypes.recruiter){
         res.status(400).send({
-            message : 'Failed! Only Recruiter can add/update the job'
+            message : 'Failed! Only Recruiter can add and update the job'
         })
         return;
     }

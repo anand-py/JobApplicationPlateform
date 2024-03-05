@@ -18,7 +18,7 @@ const applicationSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
-        default: 'PENDING',
+        default: 'Pending',
     },
 }, { timestamps: true });
 

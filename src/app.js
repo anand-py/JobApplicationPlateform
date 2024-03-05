@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true })); // Used to parse URL-encoded bo
 
 
 require('./routes/auth.routes')(app)
+require('./routes/jobs.routes')(app)
 
 
 // Connect to the database

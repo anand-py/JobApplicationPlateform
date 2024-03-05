@@ -38,17 +38,20 @@ validateUserRequestBody = async(req,res,next)=>{
  
     
 
+
 //validate userType
 const userType = req.body.userType;
-    const userTypes = [constants.userTypes.applicant, constants.userTypes.recruiter, constants.userTypes.admin]
+    const userTypes = [constants.userTypes.admin, constants.userTypes.applicant, constants.userTypes.recruiter]
     if (userType && !userTypes.includes(userType)) {
         res.status(400).send({
-            message: "UserType provided is invalid. Possible values APPLICANT | RECRUITER | ADMIN "
+            
+            message: "UserType provided is invalid. Possible values Admin | Applicant | Recruiter "
         });
         return;
     }
 
-    next()
+    next();
+
 }
 const isValidEmail = (email) => {
     return String(email)

@@ -14,13 +14,13 @@ const jobSchema = new mongoose.Schema({
         required: true
     },
     description: {
-        type: String,
+        type: [String],
         required: true
     },
     recruiter: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User', // Reference to the User model (assuming your User model is named 'User')
-        required: true
+        ref: 'User' // Reference to the User model (assuming your User model is named 'User')
+
     },
 }, { timestamps: true });
 

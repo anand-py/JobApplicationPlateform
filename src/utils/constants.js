@@ -6,10 +6,10 @@ module.exports = {
     },
 
     applicationStatus : {
-        pending : 'PENDING',
-        reviewed : 'REVIEWED',
-        accepted : 'ACCEPTED',
-        rejected : 'REJECTED'
+        pending : 'Pending',
+        reviewed : 'Reviewed',
+        accepted : 'Accepted',
+        rejected : 'Rejected'
     }
 }
 

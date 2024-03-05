@@ -20,12 +20,12 @@ exports.signup = async(req,res)=>{
             number : userObj.number,
             userTypes : usercreated.userType
         }
-        res.status(200).send(postResponse)
+        return res.status(200).send(postResponse)
     } catch (err) {
-        
         res.status(500).send({
             message: "Some internal error while inserting the element"
         })
+        
     }
 }
 

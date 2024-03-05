@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     userType: {
         type: String,
         required: true,
-        default: "APPLICANT"
+        default: "Applicant"
     }
 }, { timestamps: true }); // Add timestamps option here
 
